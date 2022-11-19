@@ -8,4 +8,5 @@ npm install
 Run React dev server (http://localhost:3000)
 
 npm start
-![FireShot Capture 033 - React App - localhost](https://user-images.githubusercontent.com/65375259/202853163-639266e4-74a3-4b13-aa9c-5ff29a0d2086.png)
+
+![FireShot Capture 033 - React App - localhost](https://user-images.githubusercontent.com/65375259/202856492-f9b5ce34-b4b1-49f9-aadd-15c5309b0257.png)
