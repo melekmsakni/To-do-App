@@ -61,7 +61,7 @@ function App() {
   };
   return (
     <div className="container">
-      <Header name="Melek" showTasks={showTasks} />
+      <Header name="Melek" showTasks={showTasks} showAddTask={showAddTask} />
       <AddTask add={addTask} showAddTask={showAddTask} />
       {tasks.length > 0 ? (
         <Tasks taskp={tasks} deletep={deleteTask} remin={changeReminder} />

@@ -1,9 +1,16 @@
 import PropTypes from "prop-types";
 
-function Button({ text, color, clique }) {
+function Button({ text, color, clique, showAddTask }) {
   let style = {
     backgroundColor: color,
   };
+
+  if (showAddTask === true) {
+    style = {
+      backgroundColor: "red",
+    };
+    text = "close";
+  }
 
   return (
     <button onClick={clique} style={style} className="btn">

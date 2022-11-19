@@ -13,6 +13,7 @@ function Header(p) {
         color="green"
         clique={p.showTasks}
         showAddTask={p.showAddTask}
+        
       />
     </div>
   );
