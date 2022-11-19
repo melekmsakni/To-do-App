@@ -87,6 +87,14 @@ body {
 /* end task */
 
 /* start add task */
+form {
+  display: none;
+}
+.show{
+  display: block;
+  transition: 1s;
+}
+
 input {
   width: 100%;
   padding: 6px;
@@ -107,12 +115,10 @@ input:focus {
 .form-input {
   margin: 10px 0px;
 }
-.form-input:last-of-type{
-  
+.form-input:last-of-type {
   display: flex;
-
 }
-.form-input:last-of-type input{
-  width:20%;
+.form-input:last-of-type input {
+  width: 20%;
 }
 /* end add task */

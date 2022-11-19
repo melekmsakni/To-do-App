@@ -22,16 +22,22 @@ function App() {
     { id: 3, text: "yuu", day: "monday", reminder: false },
     { id: 4, text: "yuu", day: "monday", reminder: false },
   ]);
+  const [showAddTask, setShowTask] = useState(false);
   //add task
   const addTask = (obj) => {
+    let id = tasks.length + 1;
     let newTask = {
-      id: 1000,
+      id: id,
       text: obj.task,
       day: obj.dayTime,
       reminder: obj.reminder,
     };
-   
+
     setTask([...tasks, newTask]);
+  };
+  //show tasks
+  let showTasks = () => {
+    setShowTask(!showAddTask);
   };
 
   //delete Task
@@ -55,8 +61,8 @@ function App() {
   };
   return (
     <div className="container">
-      <Header name="Melek" />
-      <AddTask add={addTask} />
+      <Header name="Melek" showTasks={showTasks} />
+      <AddTask add={addTask} showAddTask={showAddTask} />
       {tasks.length > 0 ? (
         <Tasks taskp={tasks} deletep={deleteTask} remin={changeReminder} />
       ) : (
