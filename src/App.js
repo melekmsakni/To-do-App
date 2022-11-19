@@ -9,18 +9,18 @@ function App() {
   const [tasks, setTask] = useState([
     {
       id: 1,
-      text: "workshop salsa",
-      day: "monday 3octobre",
+      text: "going with friends",
+      day: "monday 3 octobre",
       reminder: false,
     },
     {
       id: 2,
-      text: "yuu",
-      day: "monday",
+      text: "shopping",
+      day: "tuesday 20 octobre",
       reminder: false,
     },
-    { id: 3, text: "yuu", day: "monday", reminder: false },
-    { id: 4, text: "yuu", day: "monday", reminder: false },
+    { id: 3, text: "workshops", day: "monday 10 december", reminder: false },
+    { id: 4, text: "study", day: "thusday 20 avril", reminder: false },
   ]);
   const [showAddTask, setShowTask] = useState(false);
   //add task
@@ -66,7 +66,7 @@ function App() {
       {tasks.length > 0 ? (
         <Tasks taskp={tasks} deletep={deleteTask} remin={changeReminder} />
       ) : (
-        <h2>nothing today</h2>
+        <h5>nothing today</h5>
       )}
     </div>
   );
