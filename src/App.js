@@ -4,6 +4,7 @@ import Tasks from "./components/Tasks";
 import "./style.css";
 import { useState } from "react";
 import AddTask from "./components/AddTask";
+import { Menu } from "./components/Menu";
 
 function App() {
   const [tasks, setTask] = useState([
@@ -37,17 +38,12 @@ function App() {
     },
   ]);
   const [showAddTask, setShowTask] = useState(false);
+  const [name, setName] = useState("");
   //add task
   const addTask = (obj) => {
-    let id = tasks.length + 1;
-    let newTask = {
-      id: id,
-      text: obj.task,
-      day: obj.dayTime,
-      reminder: obj.reminder,
-    };
+    let id = tasks[tasks.length - 1].id + 1;
 
-    setTask([...tasks, newTask]);
+    setTask([...tasks, { ...obj, id }]);
   };
   //task done
   let taskDone = (id) => {
@@ -84,18 +80,21 @@ function App() {
   };
   return (
     <div className="container">
-      <Header name="Melek" showTasks={showTasks} showAddTask={showAddTask} />
-      <AddTask add={addTask} showAddTask={showAddTask} />
-      {tasks.length > 0 ? (
-        <Tasks
-          taskp={tasks}
-          deletep={deleteTask}
-          remin={changeReminder}
-          taskDone={taskDone}
-        />
-      ) : (
-        <h5>nothing today</h5>
-      )}
+      <Menu setName={setName} name={name} />
+      <div className={`todo  ${name === "" ? "hide" : ""}`}>
+        <Header name={name} showTasks={showTasks} showAddTask={showAddTask} />
+        <AddTask add={addTask} showAddTask={showAddTask} />
+        {tasks.length > 0 ? (
+          <Tasks
+            taskp={tasks}
+            deletep={deleteTask}
+            remin={changeReminder}
+            taskDone={taskDone}
+          />
+        ) : (
+          <h5>nothing today</h5>
+        )}
+      </div>
     </div>
   );
 }

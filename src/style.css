@@ -69,8 +69,6 @@ body {
 .lineThrough .icons .tick {
   background-color: white;
   border-radius: 2px;
-  
-
 }
 
 .task-reminder {
@@ -125,16 +123,43 @@ input[type="submit"] {
   border-radius: 10px;
   cursor: pointer;
 }
+
 input:focus {
   outline: none;
 }
 .form-input {
   margin: 10px 0px;
 }
-.form-input:last-of-type {
+.todo .form-input:last-of-type {
   display: flex;
 }
-.form-input:last-of-type input {
+.todo .form-input:last-of-type input {
   width: 20%;
 }
+
 /* end add task */
+.menu {
+  text-align: center;
+}
+.menu button {
+  background-color: green;
+  color: #eee;
+  font-weight: 800;
+  padding: 10px 0px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  width: 20%;
+  margin-top: 16px;
+}
+.menu input {
+  width: 100%;
+  display: block;
+}
+.hide {
+  display: none;
+}
+.menu .toLeft {
+  display: flex;
+  justify-content: right;
+}

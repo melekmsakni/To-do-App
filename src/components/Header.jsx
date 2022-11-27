@@ -1,10 +1,7 @@
 import React from "react";
 import Button from "./Button";
-
+import PropTypes from "prop-types";
 function Header(p) {
-  let melek = (s) => {
-    console.log(s);
-  };
   return (
     <div className="header">
       <h2>ToDo List of {p.name} </h2>
@@ -13,10 +10,11 @@ function Header(p) {
         color="green"
         clique={p.showTasks}
         showAddTask={p.showAddTask}
-        
       />
     </div>
   );
 }
-
+Button.defaultProps = {
+  name: "none",
+};
 export default Header;

@@ -1,18 +1,18 @@
 import { useState } from "react";
 
 function AddTask({ add, showAddTask }) {
-  const [task , setTask] = useState("");
-  const [dayTime, setdayTime] = useState("");
+  const [text, setText] = useState("");
+  const [day, setDay] = useState("");
   const [reminder, setReminder] = useState(false);
 
   const newTask = (e) => {
     e.preventDefault();
-    if (task === "") {
+    if (text === "") {
       alert("enter message");
     } else {
-      add({ task, dayTime, reminder });
-      setTask("");
-      setdayTime("");
+      add({ text, day, reminder });
+      setText("");
+      setDay("");
       setReminder("");
     }
   };
@@ -26,8 +26,8 @@ function AddTask({ add, showAddTask }) {
           name=""
           id=""
           placeholder="Add Task"
-          onChange={(e) => setTask(e.target.value)}
-          value={task}
+          onChange={(e) => setText(e.target.value)}
+          value={text}
         />
       </div>
       <div className="form-input">
@@ -37,8 +37,8 @@ function AddTask({ add, showAddTask }) {
           name=""
           id=""
           placeholder="Add day and time "
-          onChange={(e) => setdayTime(e.target.value)}
-          value={dayTime}
+          onChange={(e) => setDay(e.target.value)}
+          value={day}
         />
       </div>
       <div className="form-input">
