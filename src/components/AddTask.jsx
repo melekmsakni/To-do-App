@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function AddTask({ add, showAddTask }) {
-  const [task, setTask] = useState("");
+  const [task , setTask] = useState("");
   const [dayTime, setdayTime] = useState("");
   const [reminder, setReminder] = useState(false);
 
