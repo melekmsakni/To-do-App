@@ -12,15 +12,29 @@ function App() {
       text: "going with friends",
       day: "monday 3 octobre",
       reminder: false,
+      done: false,
     },
     {
       id: 2,
       text: "shopping",
       day: "tuesday 20 octobre",
       reminder: false,
+      done: false,
     },
-    { id: 3, text: "workshops", day: "monday 10 december", reminder: false },
-    { id: 4, text: "study", day: "thusday 20 avril", reminder: false },
+    {
+      id: 3,
+      text: "workshops",
+      day: "monday 10 december",
+      reminder: false,
+      done: false,
+    },
+    {
+      id: 4,
+      text: "study",
+      day: "thusday 20 avril",
+      reminder: false,
+      done: false,
+    },
   ]);
   const [showAddTask, setShowTask] = useState(false);
   //add task
@@ -34,6 +48,15 @@ function App() {
     };
 
     setTask([...tasks, newTask]);
+  };
+  //task done
+  let taskDone = (id) => {
+    setTask(
+      tasks.map((task) => {
+        if (task.id === id) task.done = !task.done;
+        return task;
+      })
+    );
   };
   //show tasks
   let showTasks = () => {
@@ -64,7 +87,12 @@ function App() {
       <Header name="Melek" showTasks={showTasks} showAddTask={showAddTask} />
       <AddTask add={addTask} showAddTask={showAddTask} />
       {tasks.length > 0 ? (
-        <Tasks taskp={tasks} deletep={deleteTask} remin={changeReminder} />
+        <Tasks
+          taskp={tasks}
+          deletep={deleteTask}
+          remin={changeReminder}
+          taskDone={taskDone}
+        />
       ) : (
         <h5>nothing today</h5>
       )}

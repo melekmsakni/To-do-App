@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import { FaTimes, FaCheck } from "react-icons/fa";
 
-function Task({ content, deletep, remin }) {
-  const [done, setDone] = useState(false);
-  let taskDone = () => {
-    setDone(!done);
-  };
+function Task({ content, deletep, remin, taskDone }) {
   let style = "task";
-  style += done ? " lineThrough" : "";
+  style += content.done ? " lineThrough" : "";
   style += content.reminder ? ` task-reminder` : ``;
 
   return (
@@ -18,7 +14,7 @@ function Task({ content, deletep, remin }) {
           <FaCheck
             className="tick"
             style={{ color: "green" }}
-            onClick={taskDone}
+            onClick={() => taskDone(content.id)}
           />
           <FaTimes
             style={{ color: "red" }}
