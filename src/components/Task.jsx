@@ -9,7 +9,7 @@ function Task({ content, deletep, remin, taskDone }) {
   return (
     <div className={style} onDoubleClick={() => remin(content.id)}>
       <div className="txtcontent">
-        <h4> {content.text} </h4>
+        <h4> {content.text} mmm </h4>
         <div className="icons">
           <FaCheck
             className="tick"
